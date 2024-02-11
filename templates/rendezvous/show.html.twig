@@ -1,0 +1,18 @@
+<table border="1">
+{% for i in rendezvous %}
+<tr>
+       <td>{{i.id}}</td>
+       
+       <td>{{medecinsname[loop.index0]}}</td>
+       <td>{{i.fullname}}</td>
+       <td>{{i.tel}}</td>
+       <td>{{i.date |date('Y-m-d') }}</td> 
+       <td>{{i.time}}</td>
+      
+      <td>{{i.note}}</td>
+      <td>{{i.etat}}</td>
+      <td><a href="{{ path('deleteRV',{'id':i.id} )}}">delete</a></td>
+      
+      </tr>
+    {%endfor%}
+</table>
